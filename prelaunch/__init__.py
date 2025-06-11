@@ -35,9 +35,15 @@ def create_prelaunch_app():
     
     # Database Configuration
     basedir = os.path.abspath(os.path.dirname(__file__))
+    
+    # Fix Heroku's postgres:// URL to postgresql:// for SQLAlchemy
+    database_url = os.environ.get('DATABASE_URL', 'sqlite:///site.db')
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+    
     app.config.update(
         SECRET_KEY=os.environ['SECRET_KEY'],
-        SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL', 'sqlite:///site.db'),
+        SQLALCHEMY_DATABASE_URI=database_url,
         SQLALCHEMY_ENGINE_OPTIONS={
             'connect_args': {
                 'timeout': 15,  # Increase timeout to 15 seconds
