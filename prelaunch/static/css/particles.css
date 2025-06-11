@@ -1,0 +1,130 @@
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Above main background but below content */
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 8, 16, 0.4) 0%,
+        rgba(0, 5, 7, 0.6) 100%
+    );
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: transparent;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Ensure main content stays above particles */
+.main-content {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Remove any background from sections that might hide particles */
+.hero-section, .features-section, .highlights-section, .steps-section, .security-section, .global-section, .trader-section {
+    background: transparent !important;
+}
+
+/* Add subtle transparency to content backgrounds if needed */
+.header, .footer {
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 3;
+}
+
+/* Ensure all content sections maintain proper layering */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Particle container styles */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Ensure particles container doesn't interfere with clickable elements */
+#particles-js canvas {
+    pointer-events: none;
+    filter: 
+        drop-shadow(0 0 20px rgba(0, 255, 255, 0.3))
+        contrast(160%)
+        brightness(130%)
+        hue-rotate(5deg);
+}
+
+/* Ensure particles don't interfere with interactive elements */
+.main-content * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark theme enhancements */
+canvas {
+    display: block;
+    pointer-events: none;
+    filter: blur(0.5px);
+}
+
+/* Remove gradient overlay */
+#particles-js::before,
+#particles-js::after {
+    content: none;
+}
+
+/* Enhance particle glow */
+canvas {
+    filter: blur(0.5px);
+}
+
+.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Add this new rule */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at 50% 50%,
+        transparent 70%,
+        rgba(0, 8, 16, 0.92) 100%
+    );
+    mix-blend-mode: multiply;
+}
+
+#particles-js {
+    z-index: 1;
+}
+
+.main-content {
+    z-index: 2;
+    position: relative;
+} 

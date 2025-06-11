@@ -1,0 +1,377 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0A0C10;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    background-image: 
+        linear-gradient(
+            to bottom right,
+            rgba(0, 231, 255, 0.05),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 231, 255, 0.03) 0%,
+            transparent 40%
+        );
+}
+
+/* Header Styles */
+.center-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px; /* Match the padding from dashboard */
+    background: rgba(30, 33, 40, 0.7); /* Match the dashboard header background */
+    backdrop-filter: blur(20px);
+}
+
+/* Header Left Section */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 64px; /* Match the gap from dashboard */
+    margin-right: auto; /* Ensure it takes available space */
+}
+
+/* Header Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Match the gap from dashboard */
+}
+
+/* Header Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Match the gap from dashboard */
+    margin-left: 0; /* Ensure no left margin is affecting position */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8A8D93;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #00E7FF;
+    background: rgba(0, 231, 255, 0.1);
+}
+
+.nav-link.active {
+    color: #00E7FF;
+    background: rgba(0, 231, 255, 0.1);
+}
+
+/* Button Styles */
+.action-btn {
+    background: none;
+    border: none;
+    color: #8A8D93; /* Match the dashboard button color */
+    font-size: 16px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: #00E7FF; /* Match the hover color */
+}
+
+/* Notification Badge */
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #FF3B3B; /* Match the dashboard notification badge color */
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the content */
+}
+
+h1, h2 {
+    color: #ffffff; /* Match the dashboard header text color */
+}
+
+h3 {
+    font-size: 28px; /* Increase size for main heading */
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 24px; /* Size for subheadings */
+    margin-top: 20px; /* Space above subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+}
+
+p {
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+ul, ol {
+    margin-left: 20px; /* Indent lists */
+    margin-bottom: 15px; /* Space below lists */
+}
+
+strong {
+    color: #00E7FF; /* Highlight important text */
+}
+
+section {
+    margin-bottom: 20px;
+    background: rgba(42, 45, 53, 0.5); /* Match the dashboard section background */
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(30, 33, 40, 0.7); /* Match the dashboard footer background */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #ffffff; /* Match the dashboard footer text color */
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 231, 255, 0.7);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    transition: background 0.3s;
+}
+
+.back-to-top:hover {
+    background: rgba(0, 231, 255, 1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .center-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-left, .header-right {
+        gap: 16px;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+/* Terms Page Styles */
+.terms-container {
+    padding: 40px;
+    line-height: 1.6;
+    background: rgba(16, 16, 16, 0.92);
+    border: 1px solid rgba(0, 231, 255, 0.15);
+    box-shadow: 
+        0 0 30px rgba(0, 231, 255, 0.1),
+        inset 0 0 15px rgba(0, 231, 255, 0.08);
+    margin: 40px;
+    border-radius: 24px;
+    transform: perspective(1000px) rotateX(1deg) rotateY(-0.5deg);
+}
+
+.terms-container h1 {
+    color: #00E7FF;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #00E7FF 30%, #8A8D93 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(0, 231, 255, 0.3);
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.terms-container h2 {
+    color: #ffffff;
+    margin: 40px 0 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.terms-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(0, 231, 255, 0.8) 0%, 
+        transparent 100%);
+}
+
+.terms-container p {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.terms-container ul {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+.terms-container li {
+    margin-bottom: 15px;
+    color: #ffffff;
+    position: relative;
+    padding-left: 25px;
+}
+
+.terms-container li::before {
+    content: '•';
+    color: #00E7FF;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.terms-container a {
+    color: #00E7FF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.terms-container a:hover {
+    color: #00c7ff;
+    text-shadow: 0 0 15px rgba(0, 231, 255, 0.3);
+}
+
+.terms-container a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #00E7FF;
+    transition: width 0.3s ease;
+}
+
+.terms-container a:hover::after {
+    width: 100%;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
+    background: rgba(16, 16, 16, 0.92);
+    border-top: 1px solid rgba(0, 231, 255, 0.15);
+}
+
+.footer p {
+    margin: 5px 0;
+    color: #8A8D93;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 20px;
+        margin: 20px;
+        border-radius: 16px;
+    }
+    
+    .terms-container h1 {
+        font-size: 2rem;
+    }
+    
+    .terms-container h2 {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+    
+    .terms-container p {
+        font-size: 1rem;
+    }
+}
+
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;
+    background: #000507; /* var(--background-darker) */
+}
+
+::-webkit-scrollbar-track {
+    background: #000507; /* var(--background-darker) */
+    border-left: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 6px;
+    border: 2px solid #000507; /* var(--background-darker) */
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 255, 0.3);
+}
+
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 255, 0.2) #000507;
+}
+
