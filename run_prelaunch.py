@@ -4,7 +4,9 @@ import os
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv
 
-load_dotenv()  # Load .env before app creation
+# Only load .env file in development, not on Heroku
+if not os.environ.get('DATABASE_URL'):
+    load_dotenv()  # Load .env only for local development
 
 app = create_prelaunch_app()
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
