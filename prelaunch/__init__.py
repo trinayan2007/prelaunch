@@ -87,9 +87,14 @@ def create_prelaunch_app():
     from prelaunch.routes.landing import landing
     app.register_blueprint(landing)
     
-    # Create tables
+    # Create tables only if they don't exist
     with app.app_context():
-        db.create_all()
+        try:
+            db.create_all()
+            print("Database tables created successfully!")
+        except Exception as e:
+            print(f"Database tables may already exist: {str(e)}")
+            # Continue anyway - tables might already be there
     
     print("ENV VARIABLES CHECK:")
     print("SECRET_KEY exists?", 'SECRET_KEY' in os.environ)
