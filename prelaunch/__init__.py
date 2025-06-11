@@ -41,15 +41,23 @@ def create_prelaunch_app():
     if database_url.startswith('postgres://'):
         database_url = database_url.replace('postgres://', 'postgresql://', 1)
     
+    # Configure database options based on database type
+    if database_url.startswith('sqlite://'):
+        # SQLite-specific options
+        engine_options = {
+            'connect_args': {
+                'timeout': 15,
+                'check_same_thread': False
+            }
+        }
+    else:
+        # PostgreSQL options (no timeout needed)
+        engine_options = {}
+    
     app.config.update(
         SECRET_KEY=os.environ['SECRET_KEY'],
         SQLALCHEMY_DATABASE_URI=database_url,
-        SQLALCHEMY_ENGINE_OPTIONS={
-            'connect_args': {
-                'timeout': 15,  # Increase timeout to 15 seconds
-                'check_same_thread': False  # Allow access from multiple threads
-            }
-        },
+        SQLALCHEMY_ENGINE_OPTIONS=engine_options,
         SESSION_COOKIE_SECURE=True,
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE='Strict',
