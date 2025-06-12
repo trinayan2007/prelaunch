@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/particles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile-optimizations.css') }}">
     
     <!-- Add any other CSS dependencies -->
     <link rel="stylesheet" 
@@ -314,9 +315,11 @@
                 <div class="footer-slogan">
                     Analyse. Act. Achieve.
                 </div>
+                
                 <div class="footer-contact">
                     <a href="mailto:support@profitt.com">support@profitt.com</a>
                 </div>
+                
                 <div class="footer-social">
                     <a href="https://instagram.com/profitt" target="_blank" class="social-icon">
                         <i class="fab fa-instagram"></i>
@@ -331,11 +334,13 @@
                         <i class="fa-brands fa-twitter"></i>
                     </a>
                 </div>
+                
                 <div class="footer-legal">
                     <a href="{{ url_for('landing.privacy_policy') }}">Privacy Policy</a>
                     <a href="{{ url_for('landing.terms_of_service') }}">Terms of Service</a>
                     <a href="{{ url_for('landing.about') }}">About</a>
                 </div>
+                
                 <div class="footer-bottom">
                     <p>© 2024 Profitt. All rights reserved.</p>
                 </div>
