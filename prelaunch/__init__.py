@@ -2,9 +2,6 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_talisman import Talisman
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
-from flask_wtf.csrf import CSRFProtect
 from dotenv import load_dotenv
 from datetime import datetime
 
@@ -28,7 +25,7 @@ def create_prelaunch_app():
     load_dotenv(override=True)  # Force reload
     
     # Validate required environment variables
-    required_env = ['SECRET_KEY', 'ENCRYPTION_KEY']
+    required_env = ['SECRET_KEY']
     for var in required_env:
         if not os.getenv(var):
             raise ValueError(f"Missing required environment variable: {var}")
@@ -61,23 +58,7 @@ def create_prelaunch_app():
         SESSION_COOKIE_SECURE=True,
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE='Strict',
-        PERMANENT_SESSION_LIFETIME=1800,
-        CSP={
-            'default-src': "'none'",
-            'script-src': [
-                "'self'", 
-                "https://cdnjs.cloudflare.com",
-                "'strict-dynamic'",
-                "'nonce-{nonce}'",
-                "'unsafe-eval'"
-            ],
-            'style-src': [
-                "'self'", 
-                "https://fonts.googleapis.com", 
-                "https://cdnjs.cloudflare.com",
-                "'nonce-{nonce}'"
-            ],
-        }
+        PERMANENT_SESSION_LIFETIME=1800
     )
     
     # Initialize extensions
@@ -98,7 +79,6 @@ def create_prelaunch_app():
     
     print("ENV VARIABLES CHECK:")
     print("SECRET_KEY exists?", 'SECRET_KEY' in os.environ)
-    print("ENCRYPTION_KEY exists?", 'ENCRYPTION_KEY' in os.environ)
     
     # Add custom Jinja filters
     app.jinja_env.filters['datetimeformat'] = datetimeformat
@@ -111,7 +91,6 @@ def create_prelaunch_app():
             'script-src': [
                 "'self'",
                 "https://cdn.jsdelivr.net",
-                "https://www.googletagmanager.com",
                 "'unsafe-eval'"
             ],
             'style-src': [
