@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_talisman import Talisman
@@ -82,6 +82,17 @@ def create_prelaunch_app():
     
     # Add custom Jinja filters
     app.jinja_env.filters['datetimeformat'] = datetimeformat
+    
+    # HTTPS Redirection Middleware
+    @app.before_request
+    def redirect_to_https():
+        # Only redirect in production (not in debug mode)
+        if not app.debug:
+            # Check if the request is not secure (HTTP) and not already on localhost
+            if not request.is_secure and request.remote_addr != '127.0.0.1':
+                # Replace http:// with https:// in the URL
+                url = request.url.replace("http://", "https://", 1)
+                return redirect(url, code=301)
     
     # Security headers - configure Talisman properly
     Talisman(
