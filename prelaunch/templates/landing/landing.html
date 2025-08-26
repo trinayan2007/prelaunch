@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profitt - Social Trading Network</title>
+    
+    <!-- Link CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/particles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
+        </div>
+    </header>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Join Waitlist</h3>
+            <form id="waitlistForm">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           class="form-input"
+                           placeholder=" "
+                           required>
+                    <label class="input-label">Your name</label>
+                </div>
+                
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="form-input"
+                           placeholder=" "
+                           required>
+                    <label class="input-label">Your email</label>
+                </div>
+                
+                <div class="role-title">You are joining as:</div>
+                <div class="user-type">
+                    <div class="radio-container">
+                        <input type="radio" id="learner" name="role" value="learner" required>
+                        <label class="role-card learner-option" for="learner">
+                            <span>Learner</span>
+                        </label>
+                    </div>
+                    <div class="radio-container">
+                        <input type="radio" id="trader" name="role" value="trader">
+                        <label class="role-card trader-option" for="trader">
+                            <span>Trader</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="cta-button">
+                    Submit
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check success-icon"></i>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Particles Container -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Follow Proven Experts. Trade with Clarity.</h1>
+                <p>Profitt gives you access to strategies from verified experts — tracked, transparent, and built for results.</p>
+                <button class="get-started-btn">Join the Waitlist</button>
+            </div>
+        </div>
+
+        <!-- Platform Highlights Section -->
+        <section class="highlights-section">
+            <h2 class="section-title">✨ Platform Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>24/7 Access to Insights</h3>
+                    <p>Follow strategies and trade ideas anytime, anywhere</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-simple"></i>
+                    </div>
+                    <h3>Real-time Insights</h3>
+                    <p>Stay updated with live trading signals and expert analysis</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Transparent</h3>
+                    <p>All trades are trackable — no hidden strategies or shady calls</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Access</h3>
+                    <p>Subscribe and see insights instantly</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Copy Trading Works Section -->
+        <section class="trust-section">
+            <div class="trust-content">
+                <h2 class="section-title">💫 Why Following Traders Works</h2>
+                <p class="trust-description">Most people lose money trading alone. With Profitt, you follow experts who trade full-time.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                        <span>No hidden fees</span>
+                        <p>Transparent pricing with no surprises</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-scroll"></i>
+                        <span>Transparent trade history</span>
+                        <p>See every trade before you follow</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verified performance</span>
+                        <p>Real results from real traders</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="steps-section">
+            <h2 class="section-title">Start Earning in 3 Simple Steps</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-magnifying-glass-dollar"></i>
+                    </div>
+                    <h3>Find an Expert</h3>
+                    <p>Browse performance data and trading style</p>
+                    <div class="step-number">1</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Subscribe</h3>
+                    <p>Pay a small monthly fee to access their private insights</p>
+                    <div class="step-number">2</div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Follow & Trade</h3>
+                    <p>Get notified of every trade idea and mirror it manually or in your own style</p>
+                    <div class="step-number">3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section class="security-section">
+            <h2 class="section-title">Your Trust is Our Priority</h2>
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>All transactions are encrypted</h3>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Traders can't delete or edit insights once posted</h3>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>You see what they see — live</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Reach Section -->
+        <section class="global-section">
+            <div class="global-content">
+                <h2 class="section-title">Built for Traders & Learners Worldwide</h2>
+                <p class="global-description">No matter where you are — if you've got an internet connection, you're in.</p>
+                <div class="world-map">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Become a Trader Section -->
+        <section class="trader-section">
+            <div class="trader-content">
+                <h2 class="section-title"> Share Your Strategy on Profitt</h2>
+                <p class="trader-subtitle">Monetize your expertise. Build your following. Earn recurring income.</p>
+                
+                <div class="trader-intro">
+                    <p>Are you an experienced trader with a proven strategy?</p>
+                    <p>Join Profitt and start earning from your insights.</p>
+                </div>
+
+                <div class="trader-benefits">
+                    <h3>Why Share on Profitt?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-coins"></i>
+                            <span> Earn Monthly Income</span>
+                            <p>Set your subscription fee — get paid every month by followers.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-users-line"></i>
+                            <span> Grow Your Audience</span>
+                            <p>Build a reputation. Rank up. Attract more Followers as you win.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-lock"></i>
+                            <span> Full Control</span>
+                            <p>You post what you want. Followers only see what you choose to share.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-globe"></i>
+                            <span> Global Exposure</span>
+                            <p>Get discovered by thousands of Followers worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trader-steps">
+                    <h3> How It Works for Experts</h3>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-item-icon">
+                                <i class="fas fa-id-card-clip"></i>
+                            </div>
+                            <h4>Apply as a Profitt Expert</h4>
+                            <p>Tell us about your trading experience and style.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-item-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Get Verified</h4>
+                            <p>We review your strategy, win rate, and transparency.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-item-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <h4>Start Posting Insights</h4>
+                            <p>Share trade signals, analysis, or breakdowns — in your format.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-item-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h4>Earn from Every Subscriber</h4>
+                            <p>Grow your income with each new Learner who joins your channel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-slogan">
+                Analyse. Act. Achieve.
+            </div>
+            
+            <div class="footer-contact">
+                <a href="mailto:team@profitt.trade">team@profitt.trade</a>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://x.com/profitt_trade" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/profitt.trade/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="{{ url_for('landing.privacy_policy') }}">Privacy Policy</a>
+                <a href="{{ url_for('landing.terms_of_service') }}">Terms of Service</a>
+                <a href="{{ url_for('landing.about') }}">About</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Profitt. All rights reserved.</p>
+                <p class="tradingview-attribution">
+                    Charts are powered by <a href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const config = {
+                particles: {
+                    number: {
+                        value: 60,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: ["#00ffff", "#00bfff", "#87cefa"]
+                    },
+                    shape: {
+                        type: ["circle", "triangle"],
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.8,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.3,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 2,
+                            size_min: 0.5,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#00ffff",
+                        opacity: 0.6,
+                        width: 1.2,
+                        shadow: {
+                            enable: true,
+                            color: "#00ffff",
+                            blur: 5
+                        }
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1.2,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: {
+                            enable: true,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "bubble"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 200,
+                            size: 6,
+                            duration: 2,
+                            opacity: 0.8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            };
+
+            // Initialize particles directly
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS('particles-js', config);
+            } else {
+                console.error('Particles.js failed to load');
+            }
+        });
+    </script>
+</body>
+</html>
