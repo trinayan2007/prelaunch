@@ -14,6 +14,9 @@
           referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    
+    <!-- Load particles.js from jsDelivr (allowed by CSP) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -53,21 +56,7 @@
                     <label class="input-label">Your email</label>
                 </div>
                 
-                <div class="role-title">You are joining as:</div>
-                <div class="user-type">
-                    <div class="radio-container">
-                        <input type="radio" id="learner" name="role" value="learner" required>
-                        <label class="role-card learner-option" for="learner">
-                            <span>Learner</span>
-                        </label>
-                    </div>
-                    <div class="radio-container">
-                        <input type="radio" id="trader" name="role" value="trader">
-                        <label class="role-card trader-option" for="trader">
-                            <span>Trader</span>
-                        </label>
-                    </div>
-                </div>
+                
                 
                 <button type="submit" class="cta-button">
                     Submit
@@ -297,163 +286,58 @@
         </section>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
+    <!-- Footer Section (Modern, like Active Trader) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <footer class="modern-footer">
+        <div class="footer-bg-pattern"></div>
         <div class="footer-content">
-            <div class="footer-slogan">
-                Analyse. Act. Achieve.
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" />
+                        <span class="brand-name">Profitt</span>
+                    </div>
+                    <p class="footer-mission">Profitt — The Social Trading Platform.<br>Built for traders. Designed for results.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('landing.about') }}">About</a>
+                    <a href="{{ url_for('landing.privacy_policy') }}">Privacy Policy</a>
+                    <a href="{{ url_for('landing.terms_of_service') }}">Terms of Service</a>
+                </div>
             </div>
-            
-            <div class="footer-contact">
-                <a href="mailto:team@profitt.trade">team@profitt.trade</a>
-            </div>
-            
-            <div class="footer-social">
-                <a href="https://x.com/profitt_trade" target="_blank" class="social-icon">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com/profitt.trade/" target="_blank" class="social-icon">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            
-            <div class="footer-legal">
-                <a href="{{ url_for('landing.privacy_policy') }}">Privacy Policy</a>
-                <a href="{{ url_for('landing.terms_of_service') }}">Terms of Service</a>
-                <a href="{{ url_for('landing.about') }}">About</a>
-            </div>
-            
             <div class="footer-bottom">
-                <p>© 2025 Profitt. All rights reserved.</p>
-                <p class="tradingview-attribution">
-                    Charts are powered by <a href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer">TradingView</a>.
-                </p>
+                <p class="copyright">© 2025 Profitt. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://x.com/profitt_trade" target="_blank" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/profitt.trade/" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
     <script>
-        window.addEventListener('load', function() {
-            const config = {
-                particles: {
-                    number: {
-                        value: 60,
-                        density: {
-                            enable: true,
-                            value_area: 800
-                        }
-                    },
-                    color: {
-                        value: ["#00ffff", "#00bfff", "#87cefa"]
-                    },
-                    shape: {
-                        type: ["circle", "triangle"],
-                        stroke: {
-                            width: 0,
-                            color: "#000000"
-                        },
-                        polygon: {
-                            nb_sides: 5
-                        }
-                    },
-                    opacity: {
-                        value: 0.8,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 1,
-                            opacity_min: 0.3,
-                            sync: false
-                        }
-                    },
-                    size: {
-                        value: 3,
-                        random: true,
-                        anim: {
-                            enable: true,
-                            speed: 2,
-                            size_min: 0.5,
-                            sync: false
-                        }
-                    },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#00ffff",
-                        opacity: 0.6,
-                        width: 1.2,
-                        shadow: {
-                            enable: true,
-                            color: "#00ffff",
-                            blur: 5
-                        }
-                    },
-                    move: {
-                        enable: true,
-                        speed: 1.2,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false,
-                        attract: {
-                            enable: true,
-                            rotateX: 600,
-                            rotateY: 1200
-                        }
-                    }
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: {
-                            enable: true,
-                            mode: "bubble"
-                        },
-                        onclick: {
-                            enable: true,
-                            mode: "push"
-                        },
-                        resize: true
-                    },
-                    modes: {
-                        grab: {
-                            distance: 140,
-                            line_linked: {
-                                opacity: 1
-                            }
-                        },
-                        bubble: {
-                            distance: 200,
-                            size: 6,
-                            duration: 2,
-                            opacity: 0.8,
-                            speed: 3
-                        },
-                        repulse: {
-                            distance: 200,
-                            duration: 0.4
-                        },
-                        push: {
-                            particles_nb: 4
-                        },
-                        remove: {
-                            particles_nb: 2
-                        }
-                    }
-                },
-                retina_detect: true
-            };
-
-            // Initialize particles directly
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', config);
+        // Simple modal test - remove this after confirming it works
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, testing modal...');
+            const modal = document.getElementById('waitlistModal');
+            const getStartedBtn = document.querySelector('.get-started-btn');
+            
+            if (modal && getStartedBtn) {
+                console.log('Modal and button found');
+                getStartedBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Button clicked, opening modal...');
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
             } else {
-                console.error('Particles.js failed to load');
+                console.log('Modal or button not found');
             }
         });
     </script>
+    <script src="{{ url_for('static', filename='js/particles-init.js') }}"></script>
 </body>
 </html>
