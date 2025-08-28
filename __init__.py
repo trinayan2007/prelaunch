@@ -65,7 +65,7 @@ def create_prelaunch_app():
     db.init_app(app)
     
     # Register blueprints
-    from prelaunch.routes.landing import landing
+    from routes.landing import landing
     app.register_blueprint(landing)
     
     # Create tables only if they don't exist

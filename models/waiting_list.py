@@ -1,4 +1,4 @@
-from prelaunch import db
+from __init__ import db
 from datetime import datetime
 from email_validator import validate_email
 from sqlalchemy.ext.hybrid import hybrid_property
@@ -7,7 +7,7 @@ class WaitingList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)  # Changed to plain text
     name = db.Column(db.String(100), nullable=False)  # Changed to plain text
-    user_type = db.Column(db.String(20), nullable=False)  # 'trader' or 'learner'
+    user_type = db.Column(db.String(20), nullable=True)  # optional; defaulted in UI
     joined_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     @hybrid_property

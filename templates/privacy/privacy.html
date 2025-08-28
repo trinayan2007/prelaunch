@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Profitt</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/legal-pages.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    {% include 'loader/loader.html' %}
+    
+    <!-- Privacy Content -->
+    <div class="legal-container">
+        <section class="legal-header">
+            <h1>Privacy Policy</h1>
+            <p class="legal-intro">Your trust is our priority. This policy explains how we collect, use, and protect your personal information.</p>
+        </section>
+
+        <!-- Information We Collect Section -->
+        <section class="legal-section">
+            <h4>Information We Collect</h4>
+            <p>We collect information to provide and improve our services:</p>
+            <ul>
+                <li>Account registration details (name, email, username)</li>
+                <li>Trading preferences and account type</li>
+                <li>Technical and usage data</li>
+                <li>Communication preferences</li>
+            </ul>
+        </section>
+
+        <!-- How We Use Your Information Section -->
+        <section class="legal-section">
+            <h4>How We Use Your Information</h4>
+            <ul>
+                <li>Provide and personalize trading platform services</li>
+                <li>Process payments and manage subscriptions</li>
+                <li>Communicate platform updates and important notices</li>
+                <li>Improve platform functionality and user experience</li>
+                <li>Detect and prevent fraudulent activities</li>
+            </ul>
+        </section>
+
+        <!-- Data Protection Section -->
+        <section class="legal-section">
+            <h4>Data Protection Measures</h4>
+            <p>We implement industry-standard security practices:</p>
+            <ul>
+                <li>256-bit SSL encryption for all data transmissions</li>
+                <li>Regular security audits and vulnerability assessments</li>
+                <li>Strict access controls for internal systems</li>
+                <li>Anonymization of personal data where possible</li>
+            </ul>
+        </section>
+
+        <!-- Third-Party Sharing Section -->
+        <section class="legal-section">
+            <h4>Third-Party Data Sharing</h4>
+            <p>We do not sell your personal data. We may share data with:</p>
+            <ul>
+                <li>Payment processors for transaction handling</li>
+                <li>Service providers supporting platform functionality</li>
+                <li>Legal authorities when required by law</li>
+            </ul>
+        </section>
+
+        <!-- User Rights Section -->
+        <section class="legal-section">
+            <h4>Your Rights</h4>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Request data correction</li>
+                <li>Request account deletion</li>
+                <li>Opt-out of non-essential communications</li>
+            </ul>
+        </section>
+
+        <!-- Cookies and Tracking Section -->
+        <section class="legal-section">
+            <h4>Cookies and Tracking</h4>
+            <p>We use cookies to enhance user experience and platform functionality. You can manage cookie preferences in your browser settings.</p>
+        </section>
+
+        <!-- International Data Transfers Section -->
+        <section class="legal-section">
+            <h4>International Data Transfers</h4>
+            <p>We may transfer data internationally while maintaining the same level of protection. By using our platform, you consent to these transfers.</p>
+        </section>
+
+        <!-- Policy Updates Section -->
+        <section class="legal-section">
+            <h4>Policy Updates</h4>
+            <p>We may update this policy periodically. We recommend reviewing it regularly. Continued platform use after changes constitutes acceptance.</p>
+        </section>
+    </div>
+
+
+
+    <!-- JavaScript Links -->
+    <script src="{{ url_for('static', filename='js/privacy.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+</body>
+</html>
+    

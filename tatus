@@ -1,0 +1,5 @@
+[33md9f2df1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Fix template path - move templates to prelaunch/templates/
+[33m3d3aa5e[m[33m ([m[1;31mheroku/master[m[33m, [m[1;31mheroku/HEAD[m[33m)[m Update landing page HTML content only
+[33mc6099c2[m Update messaging to remove copy trading language and improve clarity
+[33m77393bd[m Add TradingView attribution to footer with matching styling
+[33m0149da2[m Update hero section headline and subheadline on landing page

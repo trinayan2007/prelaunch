@@ -1,5 +1,5 @@
 from waitress import serve
-from prelaunch import create_prelaunch_app
+from __init__ import create_prelaunch_app
 import os
 from werkzeug.middleware.proxy_fix import ProxyFix
 from dotenv import load_dotenv

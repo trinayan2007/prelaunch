@@ -1,0 +1,10 @@
+[33mc6099c2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31mheroku/master[m[33m, [m[1;31mheroku/HEAD[m[33m)[m Update messaging to remove copy trading language and improve clarity
+[33m77393bd[m Add TradingView attribution to footer with matching styling
+[33m0149da2[m Update hero section headline and subheadline on landing page
+[33m8531b86[m Update landing page HTML
+[33m8479a3b[m Add HTTPS redirection middleware to force secure connections
+[33maa8e754[m Update email address across all pages
+[33m485a089[m Update frontend and backend with latest changes
+[33mfa5c6f9[m Update styles and add new file
+[33ma645f79[m Fix database table creation - handle existing tables gracefully
+[33m4572216[m Fix PostgreSQL connection options - remove invalid timeout parameter

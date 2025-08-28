@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Profitt</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/legal-pages.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    {% include 'loader/loader.html' %}
+
+    <!-- Terms Content -->
+    <div class="legal-container">
+        <section class="legal-header">
+            <h1>Terms of Service</h1>
+            <p class="legal-intro">By using Profitt, you agree to these terms that protect both traders and learners in our community.</p>
+        </section>
+
+        <!-- Platform Purpose Section -->
+        <section class="legal-section">
+            <h4>Platform Purpose</h4>
+            <p>Profitt is a technology platform designed to connect traders and learners through transparent, technology-driven copy trading. We facilitate knowledge sharing and trading insights, not guaranteed financial outcomes.</p>
+        </section>
+
+        <!-- User Responsibilities Section -->
+        <section class="legal-section">
+            <h4>User Responsibilities</h4>
+            <ul>
+                <li>Provide accurate and current information during registration</li>
+                <li>Maintain the confidentiality of your account credentials</li>
+                <li>Be responsible for all activities under your account</li>
+                <li>Comply with all applicable local and international laws</li>
+            </ul>
+        </section>
+
+        <!-- Trading Insights Section -->
+        <section class="legal-section">
+            <h4>Trading Insights and Recommendations</h4>
+            <p>Profitt provides a platform for traders to share insights. These are personal opinions and strategies, not financial advice. Users acknowledge that:</p>
+            <ul>
+                <li>All trading involves financial risk</li>
+                <li>Past performance does not guarantee future results</li>
+                <li>Users are solely responsible for their investment decisions</li>
+                <li>Profitt is not liable for any trading losses</li>
+            </ul>
+        </section>
+
+        <!-- Subscription and Payments Section -->
+        <section class="legal-section">
+            <h4>Subscriptions and Payments</h4>
+            <ul>
+                <li>Subscription fees are non-refundable</li>
+                <li>Pricing and features may change with 30 days notice</li>
+                <li>Users can cancel subscriptions at any time</li>
+                <li>Profitt reserves the right to suspend accounts for violation of terms</li>
+            </ul>
+        </section>
+
+        <!-- Content and Intellectual Property Section -->
+        <section class="legal-section">
+            <h4>Content and Intellectual Property</h4>
+            <p>By posting content on Profitt, you grant us a non-exclusive, worldwide license to use, reproduce, and distribute that content. You retain ownership of your original content.</p>
+        </section>
+
+        <!-- Limitation of Liability Section -->
+        <section class="legal-section">
+            <h4>Limitation of Liability</h4>
+            <p>Profitt's total liability is limited to the amount paid by you in the last 12 months. We are not liable for indirect, incidental, or consequential damages.</p>
+        </section>
+
+        <!-- Modifications to Terms Section -->
+        <section class="legal-section">
+            <h4>Changes to Terms</h4>
+            <p>We may update these terms periodically. Continued use of the platform after changes constitutes acceptance of new terms.</p>
+        </section>
+    </div>
+
+    <!-- JavaScript Links -->
+    <script src="{{ url_for('static', filename='js/terms.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+</body>
+</html>

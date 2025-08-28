@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Profitt</title>
+    <!-- CSS Links -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/legal-pages.css') }}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    .core-values {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .value-card {
+        background: rgba(16, 16, 16, 0.5);
+        border: 1px solid rgba(0, 231, 255, 0.1);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .value-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, 
+            rgba(0, 231, 255, 0.05) 0%, 
+            transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .value-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 231, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 231, 255, 0.1);
+    }
+
+    .value-card:hover::before {
+        opacity: 1;
+    }
+
+    .value-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 12px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .value-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .core-values {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<body>
+    {% include 'loader/loader.html' %}
+    
+    <div class="legal-container">
+        <!-- Header Section -->
+        <section class="legal-header">
+            <h1>Built for Access and Transparency</h1>
+            <p class="legal-intro">Profitt is a social content marketplace that connects learners with traders. See real strategies, breakdowns, and trade rationale — unedited and in real time.</p>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="legal-section">
+            <h4>Our Vision</h4>
+            <p>Access should beat promises. We make elite trading insight visible and understandable — so learners satisfy curiosity with real context, and creators grow audiences on their terms.</p>
+            
+            <div class="core-values">
+                <div class="value-card">
+                    <h3>Transparency</h3>
+                    <p>Unedited trade history, reasoning, and performance. No guarantees — just clarity you can evaluate.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Security</h3>
+                    <p>Verified creators and protected data. Clear permissions and privacy controls by default.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Learning‑First</h3>
+                    <p>See the why behind decisions. Breakdowns, context, and repeatable thinking — not shortcuts.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Creator Control</h3>
+                    <p>You set the price, format, and access. Keep ownership while reaching a global audience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section class="legal-section">
+            <h4>Our Technology</h4>
+            <p>Real-time content delivery, creator tools, and transparent analytics power the experience. From identity verification to performance visibility and content protection, we build for trust and usability — not hype.</p>
+        </section>
+
+        <!-- Future Roadmap Section -->
+        <section class="legal-section">
+            <h4>Our Commitment</h4>
+            <p>We're shipping more transparency features, smarter discovery, and better moderation — plus richer learning formats for context over noise. No promises of outcomes — just better access to the truth behind strategies.</p>
+        </section>
+    </div>
+
+    <!-- JavaScript Links -->
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/loader.js') }}"></script>
+</body>
+</html>

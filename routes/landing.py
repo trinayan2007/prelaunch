@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, current_app
-from prelaunch.models.waiting_list import WaitingList
-from prelaunch import db
+from models.waiting_list import WaitingList
+from __init__ import db
 from datetime import datetime
 import traceback
 import bleach
@@ -11,7 +11,7 @@ landing = Blueprint('landing', __name__)
 
 @landing.route('/')
 def index():
-    with open('prelaunch/static/js/particles-config.json') as f:
+    with open('static/js/particles-config.json') as f:
         particles_config = json.load(f)
     
     particles_config['particles']['number']['value'] = 20
