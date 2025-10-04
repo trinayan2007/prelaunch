@@ -19,21 +19,8 @@
     
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
-            </div>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#join" class="nav-link">Join</a>
-            </nav>
-            <button class="nav-cta" id="navJoinBtn">Get Early Access</button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
         </div>
     </header>
 
@@ -61,58 +48,37 @@
                     </button>
                 </div>
             </div>
-            
-            <!-- Hero Visual Elements -->
             <div class="hero-visual">
-                <!-- Social Post Card -->
-                <div class="floating-card social-card">
+                <div class="floating-card card-1">
                     <div class="card-header">
-                        <div class="user-avatar">
-                            <div class="avatar-placeholder">T</div>
-                        </div>
-                        <div class="user-info">
-                            <div class="user-name">Top Trader</div>
-                            <div class="post-time">2 hours ago</div>
+                        <img src="https://ui-avatars.com/api/?name=Alex+Morgan&background=00ffff&color=000" alt="Trader">
+                        <div>
+                            <h4>Alex Morgan</h4>
+                            <p class="card-status">
+                                <i class="fas fa-circle"></i>
+                                Active now
+                            </p>
                         </div>
                     </div>
                     <div class="card-content">
-                        <p>"Just closed a great position on EUR/USD. The technical setup was perfect! 📈"</p>
-                        <div class="post-stats">
-                            <span class="stat-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="currentColor"/>
-                                </svg>
-                                234
-                            </span>
-                            <span class="stat-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                89
-                            </span>
+                        <p>"Just spotted a bullish pattern on $AAPL..."</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-heart"></i> 24</span>
+                            <span><i class="fas fa-comment"></i> 8</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Community Card -->
-                <div class="floating-card community-card">
+                <div class="floating-card card-2">
                     <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <div class="card-title">Active Community</div>
-                    <div class="card-description">Join thousands of traders sharing insights daily</div>
+                    <h4>Live Community</h4>
+                    <p>Traders online discussing markets</p>
                 </div>
-
-                <!-- Notification Card -->
-                <div class="floating-card notification-card">
-                    <div class="notification-dot"></div>
-                    <div class="notification-content">
-                        <div class="notification-title">New Insight Shared</div>
-                        <div class="notification-text">@ProTrader posted a new market analysis</div>
+                <div class="floating-card card-3">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span>New insight from Sarah Chen</span>
                     </div>
                 </div>
             </div>
@@ -191,7 +157,7 @@
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-chart-mixed"></i>
                     </div>
                     <h3>Track Performance</h3>
                     <p>Keep a transparent record of your trades. Learn from your wins and losses.</p>
@@ -337,6 +303,16 @@
                     <div class="input-group">
                         <label>Email Address</label>
                         <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Trading Experience</label>
+                        <select id="experience" required>
+                            <option value="">Select your level</option>
+                            <option value="beginner">Just starting out</option>
+                            <option value="intermediate">1-3 years</option>
+                            <option value="advanced">3+ years</option>
+                            <option value="professional">Professional trader</option>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         <span>Secure My Spot</span>

@@ -157,21 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (hamburger && navMenu) {
+    if (hamburger) {
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
         });
     }
 
@@ -185,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('navJoinBtn'),
         document.getElementById('heroJoinBtn'),
         document.getElementById('joinBtn')
-    ].filter(btn => btn !== null);
+    ];
     
     openModalButtons.forEach(btn => {
         if (btn) {
@@ -226,9 +215,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
+            const experience = document.getElementById('experience').value;
             
             // Validation
-            if (!name || !email) {
+            if (!name || !email || !experience) {
                 showNotification('Please fill in all fields', 'error');
                 return;
             }
