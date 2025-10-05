@@ -249,17 +249,32 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             
             try {
-                // Simulate API call (replace with actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Send data to backend
+                const response = await fetch('/join-waiting-list', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        userType: 'trader' // Default user type
+                    })
+                });
                 
-                // Success
-                showNotification(`Welcome aboard, ${name}! Check your email for confirmation.`, 'success');
-                form.reset();
+                const result = await response.json();
                 
-                // Close modal after delay
-                setTimeout(() => {
-                    closeModal();
-                }, 2000);
+                if (result.success) {
+                    showNotification(`Welcome aboard, ${name}!`, 'success');
+                    form.reset();
+                    
+                    // Close modal after delay
+                    setTimeout(() => {
+                        closeModal();
+                    }, 2000);
+                } else {
+                    showNotification(result.message || 'Something went wrong. Please try again.', 'error');
+                }
                 
             } catch (error) {
                 showNotification('Something went wrong. Please try again.', 'error');
@@ -345,19 +360,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
     
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            navbar.style.background = 'rgba(5, 8, 22, 0.98)';
-            navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.background = 'rgba(5, 8, 22, 0.95)';
-            navbar.style.boxShadow = 'none';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.style.background = 'rgba(5, 8, 22, 0.98)';
+                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(5, 8, 22, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
 
     // Add notification styles dynamically
     const style = document.createElement('style');
@@ -455,11 +472,13 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const h3 = entry.target.querySelector('h3');
-                const text = h3.textContent;
-                const num = parseInt(text.replace(/\D/g, ''));
-                if (num && !entry.target.dataset.animated) {
-                    entry.target.dataset.animated = 'true';
-                    animateCounter(h3, num);
+                if (h3) {
+                    const text = h3.textContent;
+                    const num = parseInt(text.replace(/\D/g, ''));
+                    if (num && !entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                        animateCounter(h3, num);
+                    }
                 }
             }
         });
