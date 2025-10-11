@@ -6,8 +6,9 @@ class NetworkAnimation {
         this.canvas = document.getElementById('networkCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = 80;
-        this.connectionDistance = 150;
+        // Reduce particles on mobile
+        this.particleCount = window.innerWidth < 768 ? 20 : 80;
+        this.connectionDistance = window.innerWidth < 768 ? 100 : 150;
         this.mouse = { x: null, y: null, radius: 150 };
         
         this.init();
@@ -23,6 +24,14 @@ class NetworkAnimation {
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        
+        // Update particle count on resize
+        const newParticleCount = window.innerWidth < 768 ? 20 : 80;
+        if (newParticleCount !== this.particleCount) {
+            this.particleCount = newParticleCount;
+            this.connectionDistance = window.innerWidth < 768 ? 100 : 150;
+            this.createParticles();
+        }
     }
     
     createParticles() {
@@ -184,7 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const openModalButtons = [
         document.getElementById('navJoinBtn'),
         document.getElementById('heroJoinBtn'),
-        document.getElementById('joinBtn')
+        document.getElementById('joinBtn'),
+        document.getElementById('expertJoinBtn')
     ].filter(btn => btn !== null);
     
     openModalButtons.forEach(btn => {

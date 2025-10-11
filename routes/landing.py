@@ -50,7 +50,7 @@ def join_waiting_list():
         if WaitingList.query.filter_by(email=email).first():
             return jsonify({
                 "success": False,
-                "message": "✔️ You're already on the waitlist. We'll keep you updated!"
+                "message": "You're already on the waitlist. We'll keep you updated!"
             }), 400
             
         # Add to database

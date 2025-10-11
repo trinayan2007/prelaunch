@@ -20,12 +20,13 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
             </div>
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#features" class="nav-link">Features</a>
+                <a href="#for-experts" class="nav-link">For Experts</a>
                 <a href="#join" class="nav-link">Join</a>
             </nav>
             <button class="nav-cta" id="navJoinBtn">Get Early Access</button>
@@ -50,8 +51,8 @@
                     <span class="gradient-text">for Traders</span>
                 </h1>
                 <p class="hero-description">
-                    Where trading insights move faster than the markets. 
-                    Profitt connects traders through real ideas, transparent performance, and meaningful collaboration.
+                    Connect, share, and grow with a community of traders. 
+                    Build your reputation, share insights, and for top performers—turn your expertise into recurring income.
                 </p>
                 <div class="hero-cta">
                     <button class="btn btn-primary" id="heroJoinBtn">
@@ -74,8 +75,8 @@
                             <div class="post-time">2 hours ago</div>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <p>"Just closed a great position on EUR/USD. The technical setup was perfect! 📈"</p>
+                        <div class="card-content">
+                        <p>"Just closed a great position on EUR/USD. The technical setup was perfect!"</p>
                         <div class="post-stats">
                             <span class="stat-item">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -126,12 +127,12 @@
                     <span class="section-tag">What is Profitt?</span>
                     <h2>Built for Traders. Designed for Connection.</h2>
                     <p>
-                        Profitt isn't just another trading group — it's a network that brings traders together 
-                        through data, conversation, and credibility. Here, your insights define your reputation. 
-                        Every post, analysis, and result contributes to your presence in the network.
+                        Profitt is a social trading network where traders connect, share insights, and build their reputation. 
+                        Share your ideas, follow expert traders, and engage in real-time market discussions. 
+                        For experienced traders, Profitt offers a path to monetize your expertise through subscriptions.
                     </p>
                     <p>
-                        No noise. No clutter. Just signal.
+                        Connect. Share. Grow. Earn.
                     </p>
                 </div>
                 <div class="about-visual">
@@ -147,9 +148,9 @@
                             <p>Trading isn't meant to be isolated. Connect minds, strategies, and opportunities</p>
                         </div>
                         <div class="showcase-item">
-                            <i class="fas fa-arrow-trend-up"></i>
-                            <h4>Progress Together</h4>
-                            <p>When traders learn from traders, the entire network gets smarter</p>
+                            <i class="fas fa-dollar-sign"></i>
+                            <h4>Monetization for Experts</h4>
+                            <p>Top traders can offer premium subscriptions and turn their expertise into income</p>
                         </div>
                     </div>
                 </div>
@@ -211,6 +212,66 @@
         </div>
     </section>
 
+    <!-- For Experts Section -->
+    <section class="experts-section" id="for-experts">
+        <div class="container">
+            <div class="experts-content">
+                <span class="section-tag">For Trading Experts</span>
+                <h2>Turn Your Trading Skills Into Recurring Income</h2>
+                <p class="experts-description">
+                    Share your expertise with the community and build a sustainable income stream. 
+                    Profitt empowers successful traders to monetize their knowledge while staying connected to the network.
+                </p>
+                
+                <div class="experts-grid">
+                    <div class="experts-features">
+                        <div class="expert-feature">
+                            <i class="fas fa-coins"></i>
+                            <div class="expert-feature-content">
+                                <h4>Earn from Subscriptions</h4>
+                                <p>Offer premium insights and analysis through monthly subscriptions. Your followers pay to access your exclusive content.</p>
+                            </div>
+                        </div>
+                        <div class="expert-feature">
+                            <i class="fas fa-users"></i>
+                            <div class="expert-feature-content">
+                                <h4>Build Your Following</h4>
+                                <p>Leverage the social network to grow your audience organically. Connect with traders who value your expertise.</p>
+                            </div>
+                        </div>
+                        <div class="expert-feature">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="expert-feature-content">
+                                <h4>Premium Analytics Tools</h4>
+                                <p>Access advanced analytics to track your performance, subscriber growth, and engagement metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="earnings-calculator">
+                        <h3>Potential Monthly Earnings</h3>
+                        <div class="calculator-card">
+                            <div class="calc-row">
+                                <span class="calc-label">Subscribers</span>
+                                <span class="calc-value" id="subscriberCount">500</span>
+                            </div>
+                            <div class="calc-row">
+                                <span class="calc-label">Price per month</span>
+                                <span class="calc-value" id="pricePerMonth">$29</span>
+                            </div>
+                            <div class="calc-divider"></div>
+                            <div class="calc-row calc-total">
+                                <span class="calc-label">Your monthly income</span>
+                                <span class="calc-value calc-highlight" id="monthlyIncome">$11,600</span>
+                            </div>
+                            <p class="calc-note">* Estimated potential earnings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- How It Works Section -->
     <section class="how-section">
         <div class="container">
@@ -238,8 +299,8 @@
                     <div class="step-item">
                         <div class="step-number">03</div>
                         <div class="step-content">
-                            <h3>Build Reputation</h3>
-                            <p>Grow your presence through value and transparency. Your contributions define your standing in the network.</p>
+                            <h3>Grow Your Network</h3>
+                            <p>Build your reputation through valuable contributions. For top traders, unlock monetization opportunities.</p>
                         </div>
                     </div>
                 </div>

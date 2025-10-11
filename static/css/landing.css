@@ -650,6 +650,165 @@ body::after {
     line-height: 1.8;
 }
 
+/* For Experts Section */
+.experts-section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 255, 0.03) 50%, transparent 100%);
+}
+
+.experts-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experts-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.experts-description {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+
+.experts-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.expert-feature {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s;
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.expert-feature:hover {
+    transform: translateX(10px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 0 30px rgba(0, 255, 255, 0.1);
+}
+
+.expert-feature i {
+    font-size: 2rem;
+    color: var(--primary);
+    min-width: 50px;
+    margin-top: 0.2rem;
+}
+
+.expert-feature-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.expert-feature-content p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.earnings-calculator {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--primary);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4), inset 0 0 60px rgba(0, 255, 255, 0.05);
+    position: sticky;
+    top: 100px;
+}
+
+.earnings-calculator h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.calculator-card {
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.calc-label {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.calc-value {
+    color: var(--text);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.calc-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    margin: 1rem 0;
+}
+
+.calc-total {
+    padding-top: 1.5rem;
+}
+
+.calc-highlight {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #80ffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.calc-note {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+.earnings-calculator .btn {
+    width: 100%;
+    justify-content: center;
+    background: var(--primary);
+    color: #000;
+    box-shadow: var(--glow);
+}
+
+.earnings-calculator .btn:hover {
+    box-shadow: var(--glow-strong);
+}
+
 /* How It Works Section */
 .how-section {
     padding: 100px 0;
@@ -1138,6 +1297,15 @@ body::after {
         gap: 1.5rem;
     }
     
+    .experts-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .earnings-calculator {
+        position: static;
+    }
+    
     .how-steps {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1513,6 +1681,68 @@ body::after {
         color: rgba(255, 255, 255, 0.75);
     }
     
+    /* Experts Section - Mobile */
+    .experts-section {
+        padding: 3.5rem 0;
+    }
+    
+    .experts-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .experts-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+    
+    .experts-grid {
+        gap: 2rem;
+    }
+    
+    .expert-feature {
+        padding: 1.2rem;
+        gap: 1rem;
+    }
+    
+    .expert-feature i {
+        font-size: 1.5rem;
+        min-width: 40px;
+    }
+    
+    .expert-feature-content h4 {
+        font-size: 1rem;
+    }
+    
+    .expert-feature-content p {
+        font-size: 0.85rem;
+    }
+    
+    .earnings-calculator {
+        padding: 2rem 1.5rem;
+        position: static;
+    }
+    
+    .earnings-calculator h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .calculator-card {
+        padding: 1.5rem;
+    }
+    
+    .calc-label {
+        font-size: 0.9rem;
+    }
+    
+    .calc-value {
+        font-size: 1.1rem;
+    }
+    
+    .calc-highlight {
+        font-size: 2rem;
+    }
+    
     /* How It Works - Compact Mobile Steps */
     .how-section {
         background: linear-gradient(180deg, transparent 0%, rgba(0, 255, 255, 0.02) 50%, transparent 100%);
@@ -1785,6 +2015,7 @@ body::after {
     
     .about-section,
     .features-section,
+    .experts-section,
     .how-section,
     .join-section {
         padding: 3rem 0;
@@ -1797,6 +2028,7 @@ body::after {
     
     .section-header h2,
     .about-text h2,
+    .experts-content h2,
     .how-content h2,
     .join-content h2 {
         font-size: 1.65rem;
@@ -1804,6 +2036,7 @@ body::after {
     
     .section-header p,
     .about-text p,
+    .experts-description,
     .how-content > p,
     .join-content > p {
         font-size: 0.9rem;
@@ -1829,6 +2062,48 @@ body::after {
     
     .feature-card p {
         font-size: 0.9rem;
+    }
+    
+    .expert-feature {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+    
+    .expert-feature i {
+        font-size: 1.3rem;
+        min-width: 35px;
+    }
+    
+    .expert-feature-content h4 {
+        font-size: 0.95rem;
+    }
+    
+    .expert-feature-content p {
+        font-size: 0.8rem;
+    }
+    
+    .earnings-calculator {
+        padding: 1.8rem 1.2rem;
+    }
+    
+    .earnings-calculator h3 {
+        font-size: 1.2rem;
+    }
+    
+    .calculator-card {
+        padding: 1.2rem;
+    }
+    
+    .calc-label {
+        font-size: 0.85rem;
+    }
+    
+    .calc-value {
+        font-size: 1rem;
+    }
+    
+    .calc-highlight {
+        font-size: 1.8rem;
     }
     
     .step-card {
