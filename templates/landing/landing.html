@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profitt - The Trading Network</title>
+    <title>Profitt - Social Trading Network</title>
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
@@ -20,16 +20,16 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" class="logo-image">
             </div>
             <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
                 <a href="#features" class="nav-link">Features</a>
-                <a href="#for-experts" class="nav-link">For Experts</a>
-                <a href="#join" class="nav-link">Join</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#monetize" class="nav-link">Monetize</a>
+                <a href="#community" class="nav-link">Community</a>
             </nav>
-            <button class="nav-cta" id="navJoinBtn">Get Early Access</button>
+            <button class="nav-cta" id="navJoinBtn">Join Waitlist</button>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -44,227 +44,316 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <div class="pulse-dot"></div>
-                    <span>Coming Soon</span>
+                    <span>Launching Soon</span>
                 </div>
                 <h1 class="hero-title">
                     The Social Network<br>
-                    <span class="gradient-text">for Traders</span>
+                    <span class="gradient-text">For Traders</span>
                 </h1>
                 <p class="hero-description">
-                    Connect, share, and grow with a community of traders. 
-                    Build your reputation, share insights, and for top performers—turn your expertise into recurring income.
+                    Post insights, share signals, chat with traders, and build your following. 
+                    Like Instagram for trading — everyone starts equal, anyone can monetize.
                 </p>
+                <div class="hero-disclaimer-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Trading involves risk. Content is educational only, not financial advice.</span>
+                </div>
                 <div class="hero-cta">
                     <button class="btn btn-primary" id="heroJoinBtn">
-                        <span>Join Waitlist</span>
+                        <span>Get Early Access</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <span>Learn More</span>
+                    </a>
                 </div>
             </div>
             
-            <!-- Hero Visual Elements -->
+            <!-- Hero Visual -->
             <div class="hero-visual">
-                <!-- Social Post Card -->
-                <div class="floating-card social-card">
+                <div class="hero-card card-1">
                     <div class="card-header">
-                        <div class="user-avatar">
-                            <div class="avatar-placeholder">T</div>
-                        </div>
                         <div class="user-info">
-                            <div class="user-name">Top Trader</div>
-                            <div class="post-time">2 hours ago</div>
+                            <div class="avatar">M</div>
+                            <div>
+                                <div class="username">Market Maven</div>
+                                <div class="badge-pro">Premium</div>
+                            </div>
+                        </div>
+                        <div class="card-stats">
+                            <span class="stat-positive">+24%</span>
                         </div>
                     </div>
-                        <div class="card-content">
-                        <p>"Just closed a great position on EUR/USD. The technical setup was perfect!"</p>
-                        <div class="post-stats">
-                            <span class="stat-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="currentColor"/>
-                                </svg>
-                                234
-                            </span>
-                            <span class="stat-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                89
-                            </span>
+                    <div class="card-body">
+                        <p class="signal-text">EUR/USD long signal shared</p>
+                        <div class="engagement">
+                            <span><i class="fas fa-users"></i> 1.2k followers</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Community Card -->
-                <div class="floating-card community-card">
-                    <div class="card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                <div class="hero-card card-2">
+                    <div class="stat-box">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h4>Live Discussions</h4>
+                            <p>Real-time market analysis</p>
+                        </div>
                     </div>
-                    <div class="card-title">Active Community</div>
-                    <div class="card-description">Join thousands of traders sharing insights daily</div>
                 </div>
 
-                <!-- Notification Card -->
-                <div class="floating-card notification-card">
-                    <div class="notification-dot"></div>
+                <div class="hero-card card-3">
+                    <div class="notification-badge">
+                        <i class="fas fa-bell"></i>
+                    </div>
                     <div class="notification-content">
-                        <div class="notification-title">New Insight Shared</div>
-                        <div class="notification-text">@ProTrader posted a new market analysis</div>
+                        <strong>New Signal</strong>
+                        <p>3 traders you follow posted analysis</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
+    <!-- Trust Banner -->
+    <section class="trust-banner">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="section-tag">What is Profitt?</span>
-                    <h2>Built for Traders. Designed for Connection.</h2>
-                    <p>
-                        Profitt is a social trading network where traders connect, share insights, and build their reputation. 
-                        Share your ideas, follow expert traders, and engage in real-time market discussions. 
-                        For experienced traders, Profitt offers a path to monetize your expertise through subscriptions.
-                    </p>
-                    <p>
-                        Connect. Share. Grow. Earn.
-                    </p>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Transparent Performance</span>
                 </div>
-                <div class="about-visual">
-                    <div class="feature-showcase">
-                        <div class="showcase-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>Transparency First</h4>
-                            <p>Every idea, every trade, every insight — backed by real traders, not hidden agendas</p>
-                        </div>
-                        <div class="showcase-item">
-                            <i class="fas fa-network-wired"></i>
-                            <h4>Social by Design</h4>
-                            <p>Trading isn't meant to be isolated. Connect minds, strategies, and opportunities</p>
-                        </div>
-                        <div class="showcase-item">
-                            <i class="fas fa-dollar-sign"></i>
-                            <h4>Monetization for Experts</h4>
-                            <p>Top traders can offer premium subscriptions and turn their expertise into income</p>
-                        </div>
-                    </div>
+                <div class="trust-item">
+                    <i class="fas fa-users"></i>
+                    <span>Community Driven</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Platform</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-comments"></i>
+                    <span>Real-Time Insights</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features-section" id="features">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Features</span>
-                <h2>The Network That Works for You</h2>
+            <div class="section-header centered">
+                <span class="section-tag">Platform Features</span>
+                <h2>Everything You Need in One Place</h2>
+                <p class="section-subtitle">A complete social trading experience — post, chat, follow, and grow</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-message"></i>
+
+            <div class="features-dual">
+                <!-- Core Features -->
+                <div class="feature-column">
+                    <div class="column-header">
+                        <div class="column-icon followers-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Social Trading Features</h3>
+                        <p>Connect and engage with the community</p>
                     </div>
-                    <h3>Post & Share</h3>
-                    <p>Publish trade insights, analysis, or strategy breakdowns — your voice adds value to the network.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Post & Share Signals</h4>
+                                <p>Share your trading ideas, charts, and analysis with the community</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Chat & Discuss</h4>
+                                <p>Real-time conversations about markets, strategies, and opportunities</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Follow & Discover</h4>
+                                <p>Find traders who match your style and stay updated with their content</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Build Your Profile</h4>
+                                <p>Grow your reputation with transparent performance tracking</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-line"></i>
+
+                <!-- Monetization -->
+                <div class="feature-column">
+                    <div class="column-header">
+                        <div class="column-icon providers-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Monetization Options</h3>
+                        <p>Anyone can offer premium content</p>
                     </div>
-                    <h3>Connect & Follow</h3>
-                    <p>Build your circle of traders who share your style or inspire your strategy.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments-dollar"></i>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Free & Premium Signals</h4>
+                                <p>Share free content or create premium subscription tiers</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Set Your Own Prices</h4>
+                                <p>You control your subscription rates and what subscribers get</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Subscriber Management</h4>
+                                <p>Track subscribers, revenue, and engagement all in one place</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Performance Analytics</h4>
+                                <p>See what content resonates and grow your following organically</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Discuss & Debate</h3>
-                    <p>Join open discussions about markets, setups, and risk — no echo chambers.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Track & Improve</h3>
-                    <p>Monitor your performance and learn from results. Profitt helps you see patterns and refine decisions.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Learn & Evolve</h3>
-                    <p>Access shared knowledge and real experiences. The network learns, and so do you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-halved"></i>
-                    </div>
-                    <h3>Build Reputation</h3>
-                    <p>Grow your presence through value and transparency. Your insights define your credibility.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- For Experts Section -->
-    <section class="experts-section" id="for-experts">
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <div class="experts-content">
-                <span class="section-tag">For Trading Experts</span>
-                <h2>Turn Your Trading Skills Into Recurring Income</h2>
-                <p class="experts-description">
-                    Share your expertise with the community and build a sustainable income stream. 
-                    Profitt empowers successful traders to monetize their knowledge while staying connected to the network.
-                </p>
-                
-                <div class="experts-grid">
-                    <div class="experts-features">
-                        <div class="expert-feature">
-                            <i class="fas fa-coins"></i>
-                            <div class="expert-feature-content">
-                                <h4>Earn from Subscriptions</h4>
-                                <p>Offer premium insights and analysis through monthly subscriptions. Your followers pay to access your exclusive content.</p>
+            <div class="section-header centered">
+                <span class="section-tag">Getting Started</span>
+                <h2>Join the Community in 3 Simple Steps</h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Create Your Account</h3>
+                    <p>Sign up like any social network. No applications, no approval process — just create an account and you're in.</p>
+                </div>
+
+                <div class="step-connector"></div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Post, Chat & Follow</h3>
+                    <p>Share your trading ideas, chat with other traders, and follow accounts you find valuable. It's your trading feed.</p>
+                </div>
+
+                <div class="step-connector"></div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Monetize When Ready</h3>
+                    <p>Once you've built a following, enable subscriptions to offer premium content. Anyone can do it, anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Section (For Providers) -->
+    <section class="revenue-section" id="monetize">
+        <div class="container">
+            <div class="revenue-grid">
+                <div class="revenue-content">
+                    <span class="section-tag">Monetization</span>
+                    <h2>Turn Your Content Into Income</h2>
+                    <p class="revenue-description">
+                        Anyone on Profitt can enable subscriptions and offer premium content. 
+                        Post free signals to build your audience, then monetize with premium tiers whenever you're ready.
+                    </p>
+                    
+                    <div class="revenue-features">
+                        <div class="revenue-feature">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-toggle-on"></i>
+                            </div>
+                            <div>
+                                <h4>Enable Anytime</h4>
+                                <p>No special status required — just flip a switch in your settings</p>
                             </div>
                         </div>
-                        <div class="expert-feature">
-                            <i class="fas fa-users"></i>
-                            <div class="expert-feature-content">
-                                <h4>Build Your Following</h4>
-                                <p>Leverage the social network to grow your audience organically. Connect with traders who value your expertise.</p>
+                        <div class="revenue-feature">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div>
+                                <h4>Free + Premium Mix</h4>
+                                <p>Keep posting free content while offering exclusive premium signals</p>
                             </div>
                         </div>
-                        <div class="expert-feature">
-                            <i class="fas fa-chart-line"></i>
-                            <div class="expert-feature-content">
-                                <h4>Premium Analytics Tools</h4>
-                                <p>Access advanced analytics to track your performance, subscriber growth, and engagement metrics.</p>
+                        <div class="revenue-feature">
+                            <div class="feature-icon-small">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Growth Dashboard</h4>
+                                <p>Track subscribers, revenue, and content performance in one place</p>
                             </div>
                         </div>
                     </div>
-                    
+
+                    <div class="revenue-disclaimer">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Important:</strong> Revenue depends on your following and pricing. Results vary significantly. 
+                        Past performance does not guarantee future success. Trading content is educational, not investment advice.</p>
+                    </div>
+                </div>
+
+                <div class="calculator-wrapper">
                     <div class="earnings-calculator">
-                        <h3>Potential Monthly Earnings</h3>
+                        <h3>Example Monthly Revenue</h3>
                         <div class="calculator-card">
-                            <div class="calc-row">
-                                <span class="calc-label">Subscribers</span>
-                                <span class="calc-value" id="subscriberCount">500</span>
+                            <div class="calc-input-group">
+                                <label>Number of Subscribers</label>
+                                <div class="calc-display">
+                                    <span id="subscriberCount">200</span>
+                                </div>
                             </div>
-                            <div class="calc-row">
-                                <span class="calc-label">Price per month</span>
-                                <span class="calc-value" id="pricePerMonth">$29</span>
+                            <div class="calc-input-group">
+                                <label>Subscription Price</label>
+                                <div class="calc-display">
+                                    <span id="pricePerMonth">$25</span>
+                                    <small>/month</small>
+                                </div>
                             </div>
                             <div class="calc-divider"></div>
-                            <div class="calc-row calc-total">
-                                <span class="calc-label">Your monthly income</span>
-                                <span class="calc-value calc-highlight" id="monthlyIncome">$11,600</span>
+                            <div class="calc-result">
+                                <span class="result-label">Example Monthly Revenue</span>
+                                <span class="result-value" id="monthlyIncome">$5,000</span>
                             </div>
-                            <p class="calc-note">* Estimated potential earnings</p>
+                            <p class="calc-disclaimer">
+                                * Hypothetical example only. Actual results vary significantly based on audience size, content quality, 
+                                and market conditions. Not a guarantee or promise of earnings.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -272,73 +361,117 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-section">
+    <!-- Why Choose Profitt -->
+    <section class="why-section">
         <div class="container">
-            <div class="how-content">
-                <span class="section-tag">How It Works</span>
-                <h2>Three Steps to Join the Network</h2>
-                <p class="how-description">
-                    Simple, transparent, and built for traders who value real connections.
-                </p>
-                <div class="how-steps">
-                    <div class="step-item">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h3>Create Your Profile</h3>
-                            <p>Showcase your trading style and interests. Your profile is your foundation in the network.</p>
-                        </div>
+            <div class="section-header centered">
+                <span class="section-tag">Why Profitt</span>
+                <h2>A Different Kind of Trading Network</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-equals"></i>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h3>Share Insights</h3>
-                            <p>Post your analysis, get feedback, and connect through real ideas that move the conversation forward.</p>
-                        </div>
+                    <h3>Everyone Starts Equal</h3>
+                    <p>No tiers, no gatekeeping. Create an account and you're instantly part of the community with the same tools as everyone else.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-                    <div class="step-item">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h3>Grow Your Network</h3>
-                            <p>Build your reputation through valuable contributions. For top traders, unlock monetization opportunities.</p>
-                        </div>
+                    <h3>Full Transparency</h3>
+                    <p>Every post, every signal, every result — visible and trackable. No hidden performance or cherry-picked wins.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-comments"></i>
                     </div>
+                    <h3>Real Community</h3>
+                    <p>Chat, discuss, debate. Built for genuine conversations between traders, not just following signal bots.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Grow at Your Pace</h3>
+                    <p>Start by learning, build your skills, grow your following organically, then monetize when you're ready.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Join Section -->
-    <section class="join-section" id="join">
+    <!-- Community Section -->
+    <section class="community-section" id="community">
         <div class="container">
-            <div class="join-box">
-                <div class="join-content">
-                    <h2>Join the Next Evolution of Trading</h2>
+            <div class="community-content">
+                <div class="community-text">
+                    <span class="section-tag">Join the Community</span>
+                    <h2>Be Part of the Future of Social Trading</h2>
                     <p>
-                        Profitt is launching soon — and early members will help shape the future 
-                        of how traders connect, learn, and grow.
+                        Profitt is launching soon with a community of traders who believe in transparency, 
+                        collaboration, and real value. Get early access and help shape the platform.
                     </p>
-                    <ul class="join-benefits">
-                        <li>
-                            <i class="fas fa-bolt"></i>
-                            <span>Priority access when we launch</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-crown"></i>
+                    
+                    <div class="community-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-star"></i>
                             <span>Founding member status</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Shape the future of the network</span>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Priority access at launch</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-gift"></i>
+                            <span>Exclusive early adopter benefits</span>
+                        </div>
+                    </div>
+
                     <button class="btn btn-primary btn-large" id="joinBtn">
-                        <span>Join Waitlist</span>
+                        <span>Join the Waitlist</span>
                         <i class="fas fa-arrow-right"></i>
                     </button>
-                    <p class="join-note">
-                        <i class="fas fa-lock"></i>
-                        Be part of the network before it opens to the world.
+                </div>
+
+                <div class="community-visual">
+                    <div class="community-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">2,000+</div>
+                            <div class="stat-label">Waitlist Members</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Signal Providers Ready</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Markets Covered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Warning Banner -->
+    <section class="risk-warning-section">
+        <div class="container">
+            <div class="risk-warning-box">
+                <div class="warning-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="warning-content">
+                    <h3>Important Risk Disclosure</h3>
+                    <p>
+                        <strong>Trading involves substantial risk of loss.</strong> Profitt is a social network for sharing trading ideas and analysis. 
+                        All signals and content are for educational and informational purposes only and should not be considered financial or investment advice. 
+                        Past performance is not indicative of future results. You should never trade with money you cannot afford to lose. 
+                        Always consult with a licensed financial advisor before making any investment decisions.
                     </p>
                 </div>
             </div>
@@ -356,7 +489,10 @@
                         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Profitt" />
                         <span class="brand-name">Profitt</span>
                     </div>
-                    <p class="footer-mission">The social network for traders. Where insights move faster than markets.</p>
+                    <p class="footer-mission">The social trading network built on transparency and community.</p>
+                    <p class="footer-disclaimer">
+                        <small>Trading involves risk. All content is educational only, not financial advice.</small>
+                    </p>
                 </div>
                 <div class="footer-links">
                     <a href="{{ url_for('landing.about') }}">About</a>
@@ -384,16 +520,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Join The Waitlist</h2>
-                    <p>Be among the first to join when we launch</p>
+                    <p>Get early access when we launch</p>
                 </div>
                 <form class="waitlist-form" id="waitlistForm">
                     <div class="input-group">
-                        <label>Your Name</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
                     </div>
                     <div class="input-group">
                         <label>Email Address</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" placeholder="your@email.com" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">
                         <span>Secure My Spot</span>
@@ -401,7 +537,7 @@
                     </button>
                     <p class="form-note">
                         <i class="fas fa-shield-check"></i>
-                        Your information is safe. We'll only contact you about the launch.
+                        Your information is secure. We'll only email you about the launch.
                     </p>
                 </form>
             </div>
