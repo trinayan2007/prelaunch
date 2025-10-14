@@ -962,45 +962,43 @@ body::before {
     font-size: 1.25rem;
 }
 
-.community-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.community-highlights {
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-.stat-card {
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     background: var(--bg-card);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 2rem;
-    text-align: center;
+    padding: 1.5rem;
     transition: all 0.3s ease;
 }
 
-.stat-card:hover {
+.highlight-item:hover {
+    transform: translateX(10px);
     background: var(--bg-card-hover);
     border-color: var(--primary);
     box-shadow: var(--glow);
 }
 
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
+.highlight-item i {
+    font-size: 1.75rem;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: center;
 }
 
-.stat-label {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.stat-card:nth-child(3) {
-    grid-column: 1 / -1;
+.highlight-item p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 /* Risk Warning Section */
@@ -1324,12 +1322,20 @@ body::before {
         grid-template-columns: 1fr;
     }
 
-    .community-stats {
-        grid-template-columns: 1fr;
+    .community-highlights {
+        gap: 1rem;
     }
 
-    .stat-card:nth-child(3) {
-        grid-column: 1;
+    .highlight-item {
+        padding: 1.25rem;
+    }
+
+    .highlight-item i {
+        font-size: 1.5rem;
+    }
+
+    .highlight-item p {
+        font-size: 1rem;
     }
 
     .risk-warning-box {
