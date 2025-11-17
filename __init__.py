@@ -30,26 +30,35 @@ def create_prelaunch_app():
         if not os.getenv(var):
             raise ValueError(f"Missing required environment variable: {var}")
     
-    # Database Configuration
-    basedir = os.path.abspath(os.path.dirname(__file__))
+    # Database Configuration - require DATABASE_URL (no local fallback)
+    database_url = os.environ.get('DATABASE_URL')
+    if not database_url:
+        raise ValueError("DATABASE_URL environment variable is required")
     
     # Fix Heroku's postgres:// URL to postgresql:// for SQLAlchemy
-    database_url = os.environ.get('DATABASE_URL', 'sqlite:///site.db')
     if database_url.startswith('postgres://'):
         database_url = database_url.replace('postgres://', 'postgresql://', 1)
     
-    # Configure database options based on database type
-    if database_url.startswith('sqlite://'):
-        # SQLite-specific options
-        engine_options = {
-            'connect_args': {
-                'timeout': 15,
-                'check_same_thread': False
-            }
+    # Fix Railway internal hostname to external (if using Railway from external service like Render)
+    # Railway internal: postgres.railway.internal
+    # Railway external: containers-us-west-XXX.railway.app (or similar)
+    if 'postgres.railway.internal' in database_url:
+        # Replace internal hostname with external - user should use external connection string
+        # But if they accidentally used internal, try to construct external
+        # Better to just tell them to use external connection string from Railway
+        raise ValueError(
+            "DATABASE_URL uses Railway internal hostname. "
+            "Please use the external/public connection string from Railway dashboard. "
+            "Internal hostnames only work within Railway's network."
+        )
+    
+    # Configure PostgreSQL connection options
+    # Add SSL mode for external connections (Railway, Render, etc.)
+    engine_options = {
+        'connect_args': {
+            'sslmode': 'require'
         }
-    else:
-        # PostgreSQL options (no timeout needed)
-        engine_options = {}
+    }
     
     app.config.update(
         SECRET_KEY=os.environ['SECRET_KEY'],
@@ -63,6 +72,8 @@ def create_prelaunch_app():
     
     # Initialize extensions
     db.init_app(app)
+    
+    
     
     # Register blueprints
     from routes.landing import landing
