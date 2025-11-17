@@ -43,14 +43,20 @@ def create_prelaunch_app():
     # Railway internal: postgres.railway.internal
     # Railway external: containers-us-west-XXX.railway.app (or similar)
     if 'postgres.railway.internal' in database_url:
-        # Replace internal hostname with external - user should use external connection string
-        # But if they accidentally used internal, try to construct external
-        # Better to just tell them to use external connection string from Railway
-        raise ValueError(
-            "DATABASE_URL uses Railway internal hostname. "
-            "Please use the external/public connection string from Railway dashboard. "
-            "Internal hostnames only work within Railway's network."
+        error_msg = (
+            "ERROR: DATABASE_URL uses Railway's internal hostname (postgres.railway.internal).\n"
+            "This only works within Railway's network. Since your app runs on Render, you need the EXTERNAL connection string.\n\n"
+            "HOW TO FIX:\n"
+            "1. Go to Railway dashboard → Your PostgreSQL service → Variables tab\n"
+            "2. Look for 'Public Network' connection string (hostname should be like 'containers-us-west-XXX.railway.app')\n"
+            "3. Copy that connection string\n"
+            "4. Go to Render dashboard → Your web service → Environment tab\n"
+            "5. Update DATABASE_URL with the Public Network connection string from Railway\n"
+            "6. Redeploy your service\n\n"
+            "The external connection string will work from Render (or any external service)."
         )
+        app.logger.error(error_msg)
+        raise ValueError(error_msg)
     
     # Configure PostgreSQL connection options
     # Add SSL mode for external connections (Railway, Render, etc.)
