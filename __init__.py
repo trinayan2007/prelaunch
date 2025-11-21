@@ -60,8 +60,8 @@ def create_prelaunch_app():
     
     # Configure PostgreSQL connection options
     # Add SSL mode for external connections (Railway, Render, etc.)
-    engine_options = {
-        'connect_args': {
+        engine_options = {
+            'connect_args': {
             'sslmode': 'require'
         }
     }

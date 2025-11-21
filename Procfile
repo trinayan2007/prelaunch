@@ -1,1 +1,1 @@
-web: gunicorn run_prelaunch:app 
+web: gunicorn --bind 0.0.0.0:$PORT run_prelaunch:app
