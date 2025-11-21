@@ -39,6 +39,9 @@ def create_prelaunch_app():
     if database_url.startswith('postgres://'):
         database_url = database_url.replace('postgres://', 'postgresql://', 1)
     
+    # Initialize engine_options with default empty dict at the function level
+    engine_options = {}
+    
     # Fix Railway internal hostname to external (if using Railway from external service like Render)
     # Railway internal: postgres.railway.internal
     # Railway external: containers-us-west-XXX.railway.app (or similar)
@@ -58,13 +61,13 @@ def create_prelaunch_app():
         app.logger.error(error_msg)
         raise ValueError(error_msg)
     
-    # Configure PostgreSQL connection options
-    # Add SSL mode for external connections (Railway, Render, etc.)
+    # Configure PostgreSQL connection options for external connections
+    if 'railway' in database_url or 'render' in database_url:
         engine_options = {
             'connect_args': {
-            'sslmode': 'require'
+                'sslmode': 'require'
+            }
         }
-    }
     
     app.config.update(
         SECRET_KEY=os.environ['SECRET_KEY'],
